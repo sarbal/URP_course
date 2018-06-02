@@ -9,7 +9,7 @@ Written by:
 
 ## Intro: 
 Start off by installing R https://www.r-project.org/ and then RStudio https://www.rstudio.com/.
-- [Installing R for Windows] (../installwindow)
+- [Installing R for Windows](../installwindow)
 - [Installing R for Mac](../installmac)
 - [Installing R for Unix](../installunix)
 
