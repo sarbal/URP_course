@@ -9,12 +9,12 @@ Written by:
 
 ## Intro: 
 Start off by installing R https://www.r-project.org/ and then RStudio https://www.rstudio.com/.
-- [Installing R for Windows](installwindows.md)
-- [Installing R for Mac](installmac.md)
-- [Installing R for Unix](installunix.md)
+- [Installing R for Windows](/intro/installwindows.md)
+- [Installing R for Mac](/intro/installmac.md)
+- [Installing R for Unix](/intro/installunix.md)
 
 ## Lesson 1: R basics 
-[First things first! Let's get started.](lesson1.md)   
+[First things first! Let's get started.](/lessons/lesson1.md)   
 
 ## Lesson 2: More R 
 [Some visual things you can do with R.](lesson2.md)
