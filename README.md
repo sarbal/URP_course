@@ -17,10 +17,10 @@ Start off by installing R https://www.r-project.org/ and then RStudio https://ww
 [First things first! Let's get started.](/lessons/lesson1.md)   
 
 ## Lesson 2: More R 
-[Some visual things you can do with R.](lesson2.md)
+[Some visual things you can do with R.](/lessons/lesson2.md)
 
 ## Lesson 3: A fun example 
-[Let's play with real data.](lesson3.md)
+[Let's play with real data.](/lessons/lesson3.md)
 
 ## Lesson 4: Another potentially fun example.
-[Let's reproduce this paper.](lesson4.md)
+[Let's reproduce this paper.](/lessons/lesson4.md)
