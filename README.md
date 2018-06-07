@@ -24,3 +24,6 @@ Start off by installing R https://www.r-project.org/ and then RStudio https://ww
 
 ## Lesson 4: Another potentially fun example.
 [Let's reproduce this paper.](/lessons/lesson4.md)
+
+## Lesson 5: So shiny!
+[Let's make something interactive.](/lessons/lesson5.md)
