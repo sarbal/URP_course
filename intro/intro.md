@@ -23,7 +23,11 @@ Hi!
 
 ## How do I...
 ### Install R
-- see here... 
+Start off by installing R https://www.r-project.org/ and then RStudio https://www.rstudio.com/.
+- [Installing R for Windows](/intro/installwindows.md)
+- [Installing R for Mac](/intro/installmac.md)
+- [Installing R for Unix](/intro/installunix.md)
+
 ### Use R 
 - We will get to more fun stuff later, but first things first: 
 #### Run RStudio
