@@ -8,7 +8,7 @@ Written by:
 - Jesse Gillis
 
 ## Intro: 
-Let's start at the very begining [(a very good place to start)] (/intro/intro.md)   
+Let's start at the very begining [(a very good place to start)](/intro/intro.md)   
 
 ## Lesson 1: R basics 
 [First things first! Let's get started.](/lessons/lesson1.md)   
