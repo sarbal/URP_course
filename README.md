@@ -8,11 +8,7 @@ Written by:
 - Jesse Gillis
 
 ## Intro: 
-Start off by installing R https://www.r-project.org/ and then RStudio https://www.rstudio.com/.
-- [Installing R for Windows](/intro/installwindows.md)
-- [Installing R for Mac](/intro/installmac.md)
-- [Installing R for Unix](/intro/installunix.md)
-[And then](/intro/intro.md)   
+Let's start at the very begining [(a very good place to start)] (/intro/intro.md)   
 
 ## Lesson 1: R basics 
 [First things first! Let's get started.](/lessons/lesson1.md)   
