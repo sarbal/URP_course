@@ -17,3 +17,6 @@
 - Download the installer for Windows
 - Open and run the executable file `RStudio-XX.exe`
 
+
+## Installing Rtools:
+- Go to https://cran.r-project.org/bin/windows/Rtools/
