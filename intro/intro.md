@@ -24,14 +24,15 @@ Hi!
 ## How do I...
 ### Install R
 Start off by installing R https://www.r-project.org/ and then RStudio https://www.rstudio.com/.
-- [Installing R for Windows](/intro/installwindows.md)
-- [Installing R for Mac](/intro/installmac.md)
-- [Installing R for Unix](/intro/installunix.md)
+- [Installing R for Windows](installwindows.md)
+- [Installing R for Mac](installmac.md)
+- [Installing R for Unix](installunix.md)
 
 ### Use R 
 - We will get to more fun stuff later, but first things first: 
 #### Run RStudio
-#### Install packages:
+- Click it! 
+#### Install packages
 From CRAN: 
 ``` 
 install.packages("very_important_package")
