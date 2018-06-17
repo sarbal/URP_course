@@ -54,6 +54,8 @@ https://www.rstudio.com/
 https://www.r-bloggers.com/
 
 ## OtheR useful stuff 
+https://plot.ly/r/
+https://shiny.rstudio.com/
 https://rmarkdown.rstudio.com/
 https://www.rstudio.com/resources/cheatsheets/ 
 http://swirlstats.com/
