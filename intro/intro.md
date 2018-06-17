@@ -50,4 +50,20 @@ library(very_important_tool)
 require(very_important_data)
 ```
 ## WheRe to get help
+https://www.rstudio.com/
+https://www.r-bloggers.com/
 
+## OtheR useful stuff 
+https://rmarkdown.rstudio.com/
+https://www.rstudio.com/resources/cheatsheets/ 
+http://swirlstats.com/
+https://www.tidyverse.org/
+https://www.listendata.com/p/r-programming-tutorials.html
+http://genomicsclass.github.io/book/
+https://twitter.com/@RLangTip 
+https://twitter.com/hashtag/rstats?src=hash
+http://serialmentor.com/dataviz/
+https://adv-r.hadley.nz/
+https://peerj.com/collections/50-practicaldatascistats/
+http://www-huber.embl.de/csama2018/#home
+https://elifesciences.org/labs/cad57bcf/composing-reproducible-manuscripts-using-r-markdown
