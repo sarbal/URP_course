@@ -6,11 +6,11 @@ Hi!
 - Basic concepts in data analysis
 
 ## CouRse outline
-1. Lesson 1: R basics
-2. Lesson 2: More R
-3. Lesson 3: A fun example
-4. Lesson 4: Another potentially fun example.
-5. Lesson 5: So shiny! 
+1. [Lesson 1: R basics](../lessons/lesson1.md)
+2. [Lesson 2: More R](../lessons/lesson2.md)
+3. [Lesson 3: A fun example](../lessons/lesson3.md)
+4. [Lesson 4: Another potentially fun example.](../lessons/lesson4.md)
+5. [Lesson 5: So shiny!](../lessons/lesson5.md) 
 
 ## What is R? 
 - Statistical language 
