@@ -148,7 +148,7 @@ sex
 - If you try to assign a new value to a variable, it has be one of the levels 
 ```{r }
 sex[1] <- "female"
-sex[2] <- "unknown" # This will cause and error! 
+sex[2] <- "unknown" # This will cause an error! 
 ```
 
 - Lists are collections of data 
@@ -190,7 +190,7 @@ append(my_list, your_list)
 E <- list()
 ```
 
-- Data frame also combines multiple data types, but as a matrix 
+- Data frames also combine multiple data types, but as a matrix 
 ```{r } 
 data.frame( x=1:10, y = rep("hello", 10) ) 
 ```
