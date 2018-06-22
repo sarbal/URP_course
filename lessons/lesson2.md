@@ -2,12 +2,6 @@
 Some visual things you can do with R.
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(plyr)
-library(EGAD)
-```
-
 ## Visuals
 - R is good for visualization
 - Example data (stored in R) 
