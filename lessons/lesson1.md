@@ -199,14 +199,7 @@ data.frame( x=1:10, y = rep("hello", 10) )
 - Functions take in inputs or arguments  
 - Every function has its own set of inputs it needs 
 - They have to be entered into the function in the correct order 
-- You can find out the necessary input from the man page of a function 
-``` 
-?order
-```
-- Or by typing in the name of the function into the console 
-``` 
-order
-```
+
 
 Some useful functions:
 ``` 
