@@ -39,6 +39,59 @@ count(iris$Species[small_petals])
 count(iris$Species)
 ```
 
+## Funner examples 
+
+
+## Colors and palettes 
+```
+colors() 
+palette()
+```
+- Preset colors as strings or as numbers 
+- Or based on their RGB 
+- e.g.,
+```
+blacks = c("black", 1, "#000000") 
+reds = c("red", 2, "#FF0000") 
+allreds = colors()[grep("red", colors())]
+```
+- Color ramps 
+ ```
+allredsRamp <- colorRampPalette(allreds)
+allredsRamp(100)
+grey2blue = colorpanel(100, "lightgrey", "blue", "darkblue")
+```
+- Predefined palettes:
+- default R:
+```
+rainbow(5)
+heat.colors(10)
+terrain.colors(100)
+topo.colors(10)
+cm.colors(5)
+```
+- R color brewer
+```
+library(RColorBrewer)
+display.brewer.all()
+brewer.pal(8, "Set3" ) 
+```
+- everyone's new favorite are the viridis palettes (color-blind friendly)
+```
+library(viridis)
+magma()
+plasma()
+inferno()
+viridis()
+cividis()
+
+```
+
+More here: 
+https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf
+https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html
+https://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/
+
 
 
 
