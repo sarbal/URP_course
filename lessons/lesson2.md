@@ -15,21 +15,37 @@ colnames(iris)
 ``` 
 plot(iris)
 ```
-- this mostly works because there aren't too many data points 
-- But, now that we've seen all the bits of the data, we can play with visualizing parts of it differently  
+- Similar to calling this function, which plots a matrix of scatterplots:
+```
+pairs(iris, upper.panel = NULL )
+```
+- Now that we've seen all the bits of the data, we can play with visualizing parts of it differently  
 - Let's start with a scatter plot of the sepal length versus the petal length
 ``` 
 plot(iris$Sepal.Length, iris$Petal.Length, pch=19, col=as.numeric(iris$Species) )
 ```
-- We can view sepal width by species distributions with a boxplot
+- let's play around with this
+``` 
+## Playing with parameters 
+plot(iris$Sepal.Length, iris$Petal.Length, pch=12, cex=3, lwd=4, lty=4, type="b", col=colors()[sample(600,5)][as.numeric(iris$Species)] )
+## Plotting smoothed version
+plot(lowess(iris$Sepal.Length, iris$Petal.Length), pch=19)
+## Plotting using the forumla method 
+plot(Petal.Length ~ Sepal.Length, data=iris, pch=19, col=Species)
+```
+
+- We can view sepal width by species distributions with a boxplot, beanplot, violin plot or "joy" plots: 
 ``` 
 boxplot(iris$Sepal.Width~ iris$Species, col=1:3 )
+beanplot(iris$Sepal.Width~ iris$Species, col=list(1,2,3))
+iris.list = lapply( unique(iris$Species), function(si) iris$Sepal.Width[iris$Species==si]) 
+vioplot( iris.list[[1]], iris.list[[2]], iris.list[[3]], col="darkgreen")  
 ```
 - or take a look at the distribution of petal width
 ``` 
 hist(iris$Petal.Width, col="lightblue")
 ```
-- We see biomodality (two modes/peaks)
+- We see biomodality (two modes/peaks) in the petal width data 
 - And there is a clear division (<0.75)
 - Let us take a look to see what is distinct about the first peak 
 - Since we want petal widths less than 0.75, we can slice the data:
@@ -38,8 +54,105 @@ small_petals <- which(iris$Petal.Width <0.75)
 count(iris$Species[small_petals])
 count(iris$Species)
 ```
+- That was easy enough, and we can show this again by coloring the histogram based on the species
+- Plots in R work by layering, so we can start by drawing the whole histogram first
+```
+hist(iris$Petal.Width, col="lightblue")
+``` 
+- And then adding each individual species as a layer  
+```
+hist(iris$Petal.Width[iris$Species=="setosa"], col="red", add=T)
+hist(iris$Petal.Width[iris$Species=="versicolor"], col="blue", add=T)
+hist(iris$Petal.Width[iris$Species=="virginica"], col="purple", add=T)
+```
+- Oops! The histograms are all wonky because we've not specified how bin the data. R works "intuitively", and picks the best breaks for that data.  
+- We can force similar histogram breaks so that we can bin the data equally
+```
+h <- hist(iris$Petal.Width, col="lightblue")
+h
+```
+- The h variable has the histogram output
+- It has useful tags that we can use such as h$counts, h$mids and most importantly, h$breaks.   
+```
+hist(iris$Petal.Width[iris$Species=="setosa"],  breaks=h$breaks,col="red", add=T)
+hist(iris$Petal.Width[iris$Species=="versicolor"], breaks=h$breaks, col="blue", add=T)
+hist(iris$Petal.Width[iris$Species=="virginica"],  breaks=h$breaks,col="purple", add=T)
+```
+- There is still some overlap, so we can play with the opacity of the colors, and force no color for the first histogram
+```
+h <- hist(iris$Petal.Width, col=0, border=0)
+hist(iris$Petal.Width[iris$Species=="setosa"],  breaks=h$breaks,col=make_transparent("red"), add=T)
+hist(iris$Petal.Width[iris$Species=="versicolor"], breaks=h$breaks, col=make_transparent("blue"), add=T)
+hist(iris$Petal.Width[iris$Species=="virginica"],  breaks=h$breaks,col=make_transparent("purple"), add=T)
 
-## Funner examples 
+```
+- How about some density lines? 
+```
+lines()
+```
+
+- We can keep adding layers to our plots with other functions:
+```
+points()
+polygon()
+segments()
+abline()
+rug()
+text()
+mtext()
+legend()
+...
+```
+- More fun things to play with too 
+```
+pch
+type
+lty
+lwd
+bty
+... 
+```
+- Going back to the matrix scatterplot, let's have a visual that summarizes all the data
+```
+## Ignore these for now 
+panel.hist <- function(x, ...)
+{
+    usr <- par("usr"); on.exit(par(usr))
+    par(usr = c(usr[1:2], 0, 1.5) )
+    h <- hist(x, plot = FALSE)
+    breaks <- h$breaks; nB <- length(breaks)
+    y <- h$counts; y <- y/max(y)
+    rect(breaks[-nB], 0, breaks[-1], y, col = "lightgreen", ...)
+}
+## with size proportional to the correlations.
+panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor, ...)
+{
+    usr <- par("usr"); on.exit(par(usr))
+    par(usr = c(0, 1, 0, 1))
+    r <- abs(cor(x, y))
+    txt <- format(c(r, 0.123456789), digits = digits)[1]
+    txt <- paste0(prefix, txt)
+    if(missing(cex.cor)) cex.cor <- 0.8/strwidth(txt)
+    text(0.5, 0.5, txt, cex = cex.cor * r, col= plasma(100)[round(r,2)*100])
+}
+pairs(iris, bg=1:3,lower.panel = panel.smooth, pch=19, upper.panel = panel.cor, diag.panel = panel.hist, cex.labels = 2, font.labels = 2)
+```
+
+- Great. What if we want to ask how similar are these individual plants to each other within each species. What can we look at? 
+- Correlations are fun. 
+```
+iris2  = apply(iris[,1:4], 2, as.numeric)
+heatmap.3(iris2, RowSideCol=cols7[as.numeric(iris$Species)] , col=viridis(100))
+iris.r  = t(apply(iris[,1:4], 1, rank))
+heatmap.3(iris.r, RowSideCol=cols7[as.numeric(iris$Species)] , col=viridis(100))
+iris.r2  = apply(iris[,1:4], 2, rank)
+heatmap.3(iris.r2, RowSideCol=cols7[as.numeric(iris$Species)] , col=viridis(100))
+samples.cor = cor( t(iris2) )
+heatmap.3(samples.cor, col=plasma(100), ColSideCol=cols7[as.numeric(iris$Species)])
+```
+
+
+## Funner examples (?)
 
 
 ## Colors and palettes 
