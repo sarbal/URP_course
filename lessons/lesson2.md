@@ -84,13 +84,12 @@ plasma()
 inferno()
 viridis()
 cividis()
-
 ```
 
-More here: 
-https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf
-https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html
-https://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/
+#### More here: 
+- https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf
+- https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html
+- https://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/
 
 
 
