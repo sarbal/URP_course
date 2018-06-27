@@ -25,9 +25,11 @@ Let's start at the very begining [(a very good place to start)](/intro/intro.md)
 [Let's make something interactive.](/lessons/lesson5.md)
 
 
-Inspired by many:
-https://github.com/data-lessons/DEPRECATED-R-genomics/
-https://www.datamentor.io/
-http://www.datacarpentry.org/R-genomics/
-https://github.com/cambiotraining/r-intro
+
+#### Inspired by many:
+- https://github.com/data-lessons/DEPRECATED-R-genomics/
+- https://www.datamentor.io/
+- http://www.datacarpentry.org/R-genomics/
+- https://github.com/cambiotraining/r-intro
+- http://garrettgman.github.io/tidying/
 
