@@ -4,8 +4,7 @@ An R tutorial designed for the 2018 Undergraduate Research Program at Cold Sprin
 
 Written by: 
 - Sara Ballouz
-- Maggie Crow 
-- Jesse Gillis
+
 
 ## Intro: 
 Let's start at the very begining [(a very good place to start)](/intro/intro.md)   
@@ -24,3 +23,11 @@ Let's start at the very begining [(a very good place to start)](/intro/intro.md)
 
 ## Lesson 5: So shiny!
 [Let's make something interactive.](/lessons/lesson5.md)
+
+
+Inspired by many:
+https://github.com/data-lessons/DEPRECATED-R-genomics/
+https://www.datamentor.io/
+http://www.datacarpentry.org/R-genomics/
+https://github.com/cambiotraining/r-intro
+
