@@ -12,11 +12,9 @@
 
 ## Installing RStudio:
 - Go to http://www.rstudio.com/
-- Click on `Desktop`
-- Select `DOWNLOAD RSTUDIO DESKTOP`
-- Download the installer for Windows
-- Open and run the executable file `RStudio-XX.exe`
+- Click on `Download` and then select the `Rstudio Desktop` option 
+- Download the installer for Windows `RStudio 1.1.453 - Windows Vista/7/8/10`
+- Open and run the executable file 
 
 
-## Installing Rtools:
-- Go to https://cran.r-project.org/bin/windows/Rtools/
+Back to the [homepage](../README.md)
