@@ -4,6 +4,7 @@ Hi!
 ## CouRse aims 
 - Introduce you to R 
 - Basic concepts in data analysis
+- "Cool" visuals 
 
 ## CouRse outline
 1. [Lesson 1: R basics](../lessons/lesson1.md)
