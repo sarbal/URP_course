@@ -30,6 +30,7 @@ Start off by downloading R https://www.r-project.org/ and then RStudio https://w
 - [Installing R for Mac](installmac.md)
 - [Installing R for Unix](installunix.md)
 
+## Is it installed? Does it Run? 
 ### Use R 
 - We will get to more fun stuff later, but first things first: 
 #### Run RStudio
