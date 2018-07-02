@@ -60,6 +60,7 @@ require(very_important_data)
 ## WheRe to get help
 - https://www.rstudio.com/
 - https://www.r-bloggers.com/
+- https://www.statmethods.net/index.html
 
 ## OtheR useful stuff 
 - https://plot.ly/r/
