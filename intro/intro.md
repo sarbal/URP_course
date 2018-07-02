@@ -14,11 +14,12 @@ Hi!
 5. [Lesson 5: So shiny!](../lessons/lesson5.md) 
 
 ## What is R? 
-- Statistical language 
+- Statistical and graphical language
+- Follower of S https://en.wikipedia.org/wiki/S_(programming_language)
 
 ## What is it good foR?  
 - Data minining/analysis 
-- Data visualization 
+- Data visualization and graphics
 - Statistics! 
 - Glorified calculator? 
 
