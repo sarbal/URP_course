@@ -6,8 +6,14 @@ Let's play with real data.
 - Depending on the format, there are multiple ways to input data into R  
 - From a comma or tab separated file:
 ```
-my_data <- read.table(file="my_data.tab". header=TRUE, sep="\t")
+my_data <- read.table(file="my_data.tab", header=TRUE, sep="\t")
 my_data <- read.csv(file="my_data.csv")
+my_data <- read.delim(file="my_data.txt", sep=":")
+```
+- With more control: 
+```
+scan()
+readLineS()
 ```
 - From Excel 
 ```
@@ -15,7 +21,7 @@ library(xlsx)
 my_data <- read.xlsx(file="my_data.xlsx", 1)
 my_data <- read.xlsx(file="my_data.xlsx", sheetName = "my_sheet")
 ```
-From a PDF (a little more advanced)
+- From a PDF (a little more advanced)
 ```
 install.packages("pdftools")
 library("pdftools")
@@ -52,7 +58,7 @@ my_function <- function(x){
 }
 save(all_my_data, my_function, file="my_data.Rdata")
 ```
-### Saving plots 
+### Saving graphics 
 - As a pdf or postscript (vector graphics) 
 ```
 pdf("my_plot.pdf") or try # postscript()  
@@ -61,7 +67,7 @@ dev.off()
 ```
 - Or as an image (.png, .jpeg)
 ```
-png("my_plot.png") # or try # jpeg() 
+png("my_plot.png") # or try # jpg() 
 plot(my_data)
 dev.off() 
 ```
