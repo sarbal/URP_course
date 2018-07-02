@@ -15,15 +15,55 @@ library(xlsx)
 my_data <- read.xlsx(file="my_data.xlsx", 1)
 my_data <- read.xlsx(file="my_data.xlsx", sheetName = "my_sheet")
 ```
-From a PDF
+From a PDF (a little more advanced)
 ```
+install.packages("pdftools")
+library("pdftools")
+library("glue")
+library("tidyverse")
 
-```
+pdf_filename  <- "example.pdf"
+pdf_text_extract <- pdf_text(pdf_filename)
+pdf_text_extract
+page <- str_split(pdf_text_extract[[1]], "\n", simplify = TRUE)
+``` 
+
 
 ### Clean up data
+- Data/sanity checks
+- Does it looks like what you think it should? 
+- Same number of lines imported as file contains? 
+- No weird characters? Some special characters have special properties when being read in. 
+- How many empty values? Find/replace empty values with NAs 
+- Correct data type? If numbers are stored as characters, there may be something odd in your input. 
+- Put data into different variables, into tables or into the tidyverse. 
 
-### Save data
-
-
+### Save/export data
+- As text 
+```
+write.table(my_list, file="my_list.txt", sep="\t", quote="", row.names=T)
+write.csv(my_list, file="my_list.csv")
+```
+- As binary file
+```
+all_my_data <- rnorm(10000) 
+my_function <- function(x){ 
+  print("Hello, world!") 
+}
+save(all_my_data, my_function, file="my_data.Rdata")
+```
+### Saving plots 
+- As a pdf or postscript (vector graphics) 
+```
+pdf("my_plot.pdf") or try # postscript()  
+plot(my_data)
+dev.off() 
+```
+- Or as an image (.png, .jpeg)
+```
+png("my_plot.png") # or try # jpeg() 
+plot(my_data)
+dev.off() 
+```
 
 Back to the [homepage](../README.md)
