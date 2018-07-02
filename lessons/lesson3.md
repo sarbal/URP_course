@@ -72,7 +72,7 @@ plot(my_data)
 dev.off() 
 ```
 
-## <INSERT FUN EXAMPLE HERE> 
+## INSERT FUN EXAMPLE HERE 
   
 
 Back to the [homepage](../README.md)
