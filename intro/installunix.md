@@ -12,7 +12,7 @@
 ## Installing RStudio:
 - Go to http://www.rstudio.com/
 - Click on `Download` and then select the `Rstudio Desktop` option 
-- Download the installer for your supported platform `RStudio 1.1.453 -` (versions of Ubuntu, Debian, Fedora, RedHad, or openSUSE)
+- Download the installer for your supported platform `RStudio 1.1.453 -` (versions of Ubuntu, Debian, Fedora, RedHat, or openSUSE)
 - Open and run the executable file 
 
 
