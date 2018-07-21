@@ -45,6 +45,12 @@ From Bioconductor:
 source("http://bioconductor.org/biocLite.R")
 biocLite("very_important_package")
 ```
+Or (for the next release)
+``` 
+if (!require("BiocManager"))
+    install.packages("BiocManager")
+BiocManager::install("my_super_cool_package")
+```
 From github:
 ```  
 install.packages("devtools")
