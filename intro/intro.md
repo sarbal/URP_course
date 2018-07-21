@@ -15,7 +15,7 @@ Hi!
 
 ## What is R? 
 - Statistical and graphical language
-- Follower of S https://en.wikipedia.org/wiki/S_(programming_language)
+- Follower of [S](https://en.wikipedia.org/wiki/S_(programming_language))
 
 ## What is it good foR?  
 - Data minining/analysis 
@@ -25,7 +25,7 @@ Hi!
 
 ## How do I...
 ### Install R
-Start off by downloading R https://cran.r-project.org/ and then RStudio https://www.rstudio.com/.
+Start off by downloading [R](https://cran.r-project.org/) and then [RStudio](https://www.rstudio.com/).
 - [Installing R for Windows](installwindows.md)
 - [Installing R for Mac](installmac.md)
 - [Installing R for Unix](installunix.md)
@@ -35,6 +35,11 @@ Start off by downloading R https://cran.r-project.org/ and then RStudio https://
 - We will get to more fun stuff later, but first things first: 
 #### Run RStudio
 - Click it! 
+
+### Packages, Repositories, oh my!
+- Packages are code (and other!) bundles. 
+- Repositories are where packages are located. Most are in [CRAN](https://cran.r-project.org/web/packages/). [Bioconductor](https://www.bioconductor.org/packages/release/BiocViews.html) and also [github](https://github.com/trending/r). 
+- More on this [here](http://r-pkgs.had.co.nz/) and [here](https://www.datacamp.com/community/tutorials/r-packages-guide). 
 #### Install packages
 From CRAN: 
 ``` 
@@ -63,6 +68,7 @@ library(very_important_package)
 library(very_important_tool)
 require(very_important_data)
 ```
+
 ## WheRe to get help
 - https://www.rstudio.com/
 - https://www.r-bloggers.com/
