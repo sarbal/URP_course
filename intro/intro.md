@@ -18,7 +18,7 @@ Hi!
 - Follower of [S](https://en.wikipedia.org/wiki/S_(programming_language))
 
 ## What is it good foR?  
-- Data minining/analysis 
+- Data mining/analysis 
 - Data visualization and graphics
 - Statistics! 
 - Glorified calculator? 
