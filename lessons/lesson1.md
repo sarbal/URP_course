@@ -216,9 +216,22 @@ ls()     # lists all the objects in your environment
 ```
 - more here: https://www.statmethods.net/management/functions.html 
 
+
+
 ## Test yourself! 
-1. Generate a vector of 100 random numbers (any which way you want), and assign it to a variable called "my_random_numbers". 
-2. Multiply two matrices.
+1. Install these packages (and their dependencies): 
+   +  From CRAN: [tidyverse](https://www.tidyverse.org/), [devtools](https://cran.r-project.org/web/packages/devtools/index.html)
+   +  From bioconductor: [EGAD](https://bioconductor.org/packages/release/bioc/html/EGAD.html)
+   +  From github: [CatterPlots](https://github.com/Gibbsdavidl/CatterPlots)
+2. Create an R markdown file (using RStudio). Save the file as "yourname_Lesson1.Rmd". Delete the instructions starting from "This is an [R...". For the remaining exercises, insert the code as R chunks when you are satisified with your solutions. An R chunk is code placed  after a line that starts with ` ```{ r } `and ends before a line with ` ``` `.  
+3. Generate a vector of random numbers (any which way you want) of length between 10 and 100, and assign it to a variable called "my_random_numbers". Print out the length of this vector, and then the first and last numbers of the vector. 
+4. Generate two square matrices (equal width and height) named B1 and B2. Multiply these matrices and save the output of the multiplication as B. Print out the first column of B1, the last row of B2, and then the diagonal of B. 
+5. Plot any of the plots from the CatterPlot page.
+6. Make a matrix of dimension 20 by 40, full of zeroes. Then, modify the matrix so that once viewed, it spells out your initials, OR a random shape. Use the "image" function to view it as you go along, but remember, it plots things 'upside down'... Once done, plot it using the image function, but remove the axes. 
+7. Write up a brief (one or two sentences) summary of your URP project in your R markdown file. 
+8. "Knit" your R markdown file into an html page, a pdf and a word document. Save the latter two. 
+ 
+Solutions: Next week!
 
 Back to the [homepage](../README.md)
 
