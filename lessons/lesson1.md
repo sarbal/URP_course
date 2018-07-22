@@ -227,9 +227,9 @@ ls()     # lists all the objects in your environment
 3. Generate a vector of random numbers (any which way you want) of length between 10 and 100, and assign it to a variable called "my_random_numbers". Print out the length of this vector, and then the first and last numbers of the vector. 
 4. Generate two square matrices (equal width and height) named B1 and B2. Multiply these matrices and save the output of the multiplication as B. Print out the first column of B1, the last row of B2, and then the diagonal of B. 
 5. Plot any of the plots from the CatterPlot page.
-6. Make a matrix of dimension 20 by 40, full of zeroes. Then, modify the matrix so that once viewed, it spells out your initials, OR a random shape. Use the "image" function to view it as you go along, but remember, it plots things 'upside down'... Once done, plot it using the image function, but remove the axes. 
+6. Make a matrix of dimension 20 by 40, full of zeroes. Then, modify the matrix so that once viewed, it spells out your initials, OR a random shape. Use the "image" function to view it as you go along, but remember, it plots things 'rotated'... Once done, plot it using the image function, but remove the axes. 
 7. Write up a brief (one or two sentences) summary of your URP project in your R markdown file. 
-8. "Knit" your R markdown file into an html page, a pdf and a word document. Save the latter two. 
+8. "Knit" your R markdown file into an html page, a pdf and a word document. Save the latter two. Email either file to me! 
  
 Solutions: Next week!
 
