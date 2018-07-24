@@ -60,6 +60,11 @@ vioplot( iris.list[[1]], iris.list[[2]], iris.list[[3]], col="darkgreen")
 ``` 
 hist(iris$Petal.Width, col="lightblue")
 ```
+- or build a barplot :
+``` 
+iris.bar = tapply( iris$Sepal.Length, iris$Species, mean)
+barplot(iris.bar, col="black", xlab="Species", ylab="Count", main="Bar plot of mean Sepal Length")
+```
 - We see biomodality (two modes/peaks) in the petal width data 
 - And there is a clear division (<0.75)
 - Let us take a look to see what is distinct about the first peak 
@@ -105,7 +110,6 @@ hist(iris$Petal.Width[iris$Species=="virginica"],  breaks=h$breaks,col=make_tran
 ```
 lines()
 ```
-
 - We can keep adding layers to our plots with other functions:
 ```
 points()
@@ -167,8 +171,43 @@ heatmap.3(samples.cor, col=plasma(100), ColSideCol=cols7[as.numeric(iris$Species
 ```
 
 
-## Funner examples (?)
+## "Tidyr" versions 
+We can do most all of this with [ggplot2](https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf).There are less things finicky things to worry about, and is generally more intuitive. 
+```
+g <- ggplot(iris, aes(x = Sepal.Length, y = Petal.Length)) 
+```
+- This does nothing, because we've not specified what we want to draw:
+```
+g <- g + geom_point() 
+```
+- Points! Now to color them:
+```
+g <- g + geom_point(aes(color = Species))
+```
+- We can keep building onto the "g" variable. 
+```
+g <- ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) + geom_point()  +  geom_smooth(method = "lm", se = F) 
 
+``` 
+- How about boxplots? 
+```
+g <- ggplot(data=iris, aes(x=Species, y=Sepal.Length))
+g + geom_boxplot(aes(fill=Species)) + 
+  ylab("Sepal Length") + ggtitle("Iris Boxplot") +
+  stat_summary(fun.y=mean, geom="point", shape=5, size=4)  
+```
+-- Histograms:
+```
+g <- ggplot(data=iris, aes(x=Sepal.Width))
+g + geom_histogram(binwidth=0.2, color="black", aes(fill=Species)) +  xlab("Sepal Width") +  ylab("Frequency") + ggtitle("Histogram of Sepal Width") 
+```
+--- Barplots:
+```
+g <- ggplot(data=iris, aes(x=Species, y=Sepal.Length))
+g + geom_bar(stat = "summary", fun.y = "mean") + 
++ xlab("Species") +  ylab("Mean") + ggtitle("Bar plot of mean Sepal Length") 
+```
+More [here](https://www.mailman.columbia.edu/sites/default/files/media/fdawg_ggplot2.html)
 
 ## Colors and palettes 
 ```
