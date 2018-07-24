@@ -2,6 +2,7 @@
 First things first! Download these files into your working directory: 
 - [lesson1](../data/lesson1.Rdata)
 - [helper.R](../.data/helper.R)
+###
 To check your working directory:
 ```
 getwd()
