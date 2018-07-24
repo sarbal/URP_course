@@ -5,7 +5,6 @@
 ##  Written: Sara Ballouz
 ##  Date: July 23rd, 2018
 
-
 ## Necessary libraries
 if( !require("gplots")){
   install.packages("gplots")
