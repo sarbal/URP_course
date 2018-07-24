@@ -1,10 +1,24 @@
 # Lesson 2: More R
-Some visual things you can do with R.
+Some visual things you can do with R. Once more, download these files into your working directory: 
+- [lesson2](../data/lesson2.Rdata). 
+- [helper.R](../data/helper.R)
+To check your working directory:
+```
+getwd()
+```
+To set your working diretory: 
+```
+setwd("H:/URP")
+```
+Run this to install/load libraries
+```
+source("helper.R") 
+```
 
 
 ## Visuals
-- R is good for visualization
-- Example data (stored in R) 
+- R is pretty good for visualization
+- We will start off with the famous [Iris](http://stat.ethz.ch/R-manual/R-devel/library/datasets/html/iris.html) dataset. You can read more about it [here](https://en.wikipedia.org/wiki/Iris_flower_data_set).   
 ``` 
 summary(iris)
 class(iris)
