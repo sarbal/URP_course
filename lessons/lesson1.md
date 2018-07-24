@@ -1,7 +1,20 @@
 # Lesson 1: R basics
-First things first! Download these files: 
+First things first! Download these files into your working directory: 
 - [lesson1](../data/lesson1.Rdata)
 - [helper.R](../.data/helper.R)
+To check your working directory:
+```
+getwd()
+```
+To set your working diretory: 
+```
+setwd("H:/URP")
+```
+Run this to install/load libraries (this might take a while if you do not have most of the packages installed, so run this as soon as possible). 
+```
+source("helper.R") 
+```
+
 
 ## Defintions
 - Variable: Holds a value 
@@ -19,7 +32,7 @@ print("Hello World")
 - The print function is given an argument (also known as input) within the '()' 
 - All functions are called this way
 ``` 
-load("lesson.Rdata")
+load("lesson1.Rdata")
 sum(x)
 plot(x,y)
 require(limma)
