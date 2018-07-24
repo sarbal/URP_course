@@ -17,10 +17,10 @@ print("Hello World")
 - The print function is given an argument (also known as input) within the '()' 
 - All functions are called this way
 ``` 
+load("lesson.Rdata")
 sum(x)
 plot(x,y)
 require(limma)
-load("lesson.Rdata")
 source("helper.R")
 ```
 - The output is returned once the function or command is evaluated - i.e. when you run it or enter into the command console 
