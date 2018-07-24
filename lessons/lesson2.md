@@ -196,12 +196,12 @@ g + geom_boxplot(aes(fill=Species)) +
   ylab("Sepal Length") + ggtitle("Iris Boxplot") +
   stat_summary(fun.y=mean, geom="point", shape=5, size=4)  
 ```
--- Histograms:
+- Histograms:
 ```
 g <- ggplot(data=iris, aes(x=Sepal.Width))
 g + geom_histogram(binwidth=0.2, color="black", aes(fill=Species)) +  xlab("Sepal Width") +  ylab("Frequency") + ggtitle("Histogram of Sepal Width") 
 ```
---- Barplots:
+- Barplots:
 ```
 g <- ggplot(data=iris, aes(x=Species, y=Sepal.Length))
 g + geom_bar(stat = "summary", fun.y = "mean") + 
