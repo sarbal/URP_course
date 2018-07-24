@@ -19,8 +19,8 @@ print("Hello World")
 ``` 
 sum(x)
 plot(x,y)
-library(limma)
-load("file.Rdata")
+require(limma)
+load("lesson.Rdata")
 source("helper.R")
 ```
 - The output is returned once the function or command is evaluated - i.e. when you run it or enter into the command console 
