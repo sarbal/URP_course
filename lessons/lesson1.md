@@ -1,5 +1,7 @@
 # Lesson 1: R basics
-First things first!
+First things first! Download these files: 
+- [lesson1](../data/lesson1.Rdata)
+- [helper.R](../.data/helper.R)
 
 ## Defintions
 - Variable: Holds a value 
