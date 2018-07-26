@@ -204,8 +204,7 @@ g + geom_histogram(binwidth=0.2, color="black", aes(fill=Species)) +  xlab("Sepa
 - Barplots:
 ```
 g <- ggplot(data=iris, aes(x=Species, y=Sepal.Length))
-g + geom_bar(stat = "summary", fun.y = "mean") + 
-+ xlab("Species") +  ylab("Mean") + ggtitle("Bar plot of mean Sepal Length") 
+g + geom_bar(stat = "summary", fun.y = "mean") + xlab("Species") +  ylab("Mean") + ggtitle("Bar plot of mean Sepal Length") 
 ```
 More [here](https://www.mailman.columbia.edu/sites/default/files/media/fdawg_ggplot2.html)
 
