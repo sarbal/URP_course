@@ -13,7 +13,7 @@ my_data <- read.delim(file="my_data.txt", sep=":")
 - With more control: 
 ```
 scan()
-readLineS()
+readLines()
 ```
 - From Excel 
 ```
@@ -61,7 +61,7 @@ save(all_my_data, my_function, file="my_data.Rdata")
 ### Saving graphics 
 - As a pdf or postscript (vector graphics) 
 ```
-pdf("my_plot.pdf") or try # postscript()  
+pdf("my_plot.pdf") # or try postscript()  
 plot(my_data)
 dev.off() 
 ```
@@ -72,14 +72,14 @@ plot(my_data)
 dev.off() 
 ```
 
-## INSERT FUN EXAMPLE HERE 
+## 
 
 
 ## Test yourself! 
 1. Create an R markdown file (using RStudio). Save the file as "yourname_Lesson3.Rmd". Once again, delete the instructions starting from "This is an [R...". For the remaining exercises, insert the code as R chunks when you are satisified with your solutions. An R chunk is code placed  after a line that starts with ` ```{ r } `and ends before a line with ` ``` `.  
 2. Load the file "lesson3.Rdata" into your environment. 
 
-"Knit" your R markdown file into an html page, a pdf and a word document. Save the latter two. Email either file to me! 
+3. "Knit" your R markdown file into an html page, a pdf and a word document. Save the latter two. Email either file to me! 
  
 Solutions: Next week!
 
