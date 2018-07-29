@@ -58,26 +58,35 @@ pdf_filename  <- "elife-27469-v1.pdf"
 pdf_text_extract <- pdf_text(pdf_filename)
 length(pdf_text_extract)
 page <- str_split(pdf_text_extract[[5]], "\n", simplify = TRUE) 
+```
+
+```
+load("lesson3.Rdata") # if the pdf extraction didn't work 
 table <- unlist(page)[4:20]
+```
+- extract the columns, using substr(), trimws() and sapply()
+```
 col1 = sapply(1:length(table), function(i) trimws(substr( table[i], 38, 81)))
 col2 = sapply(1:length(table), function(i) trimws( substr( table[i], 82, 96 )))
 col3 = sapply(1:length(table), function(i) trimws(substr( table[i], 97, 111 )))
 col4 = sapply(1:length(table), function(i) trimws(substr( table[i], 112, 132 )))
 col5 = sapply(1:length(table), function(i) gsub("\r", "", trimws(substr( table[i], 133, 150 ))))
-
+```
+- merge the columns together into a table with cbind()
+```
 data_table = cbind(cbind(col2, col3, col4,col5)[1,],  t(cbind(col2, col3, col4,col5)[-1,]))
-
 colnames(data_table) =  c("day", col1[-1] )
 rownames(data_table) = cbind(col2, col3, col4,col5)[1,]
 data_table = as.data.frame(data_table)
-
 temp1 = apply(data_table, 2, as.numeric, as.character)
 temp1 = as.data.frame(temp1)
 temp1[,5] = as.factor(data_table[,5] )
 temp1[,1] = as.factor(data_table[,1] )
 rownames(temp1) = rownames(data_table)
 data_table = temp1
-``` 
+```
+
+
 ### From other places, types  
 - URLs: using RCurl, e.g., http://rfunction.com/archives/1672 
 - SQL databases: using DBI, dblplyr, or plyr. e.g., SRADB https://www.rdocumentation.org/packages/SRAdb/versions/1.30.0/topics/getSRA 
