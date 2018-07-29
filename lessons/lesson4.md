@@ -19,6 +19,16 @@ Run this to install/load libraries
 source("helper.R") 
 ```
 
+## Get data 
+
+## Clean up data 
+
+## Data analysis 
+
+## Plot/graph 
+
+## Save 
+
 
 
 ## Test yourself! 
