@@ -37,6 +37,28 @@ if( !require("vioplot")){
   install.packages("vioplot")
 }
 
+if( !require("tidyverse")){
+  install.packages("tidyverse")
+}
+
+# Colors 
+cols = colorpanel(16, "red", "blue")
+cols2 = brewer.pal(8, "Spectral")
+cols3= rainbow(30)
+cols4 = colorpanel(63, "lightgrey", "blue", "darkblue")
+cols5 = colorpanel(300, "lightgrey", "red", "darkred")
+cols6 = colorpanel(100, "lightgrey", "red", "darkmagenta")
+cols7 = c("seagreen", "black", "darkmagenta")
+cols8 = viridis(10)
+cols9 = colorpanel(100, "white", "red", "darkmagenta")
+cols10 = colorpanel(100, "white", "blue", "darkcyan")
+cols11 = colorpanel(100, "white", "orange", "deeppink4")
+cols12 = magma(100)
+cols13 = viridis(100)
+
+
+
+# Random functions 
 rank_std <- function(x)  { r = rank( x, na.last="keep"); r/max(r, na.rm=T)  }
 colSD <- function( data){ return(apply( data, 2, sd, na.rm=T))}
 rowSD <- function( data){ return(apply( data, 1, sd, na.rm=T))}
@@ -211,6 +233,8 @@ gene_set_enrichment <- function(genes, genes.labels, voc){
         pvals.adj = p.adjust( pvals, method="BH")
 
 	results = cbind(voc[v.g,1:2], test[v.f,c(1,2)], pvals[v.f], pvals.adj[v.f], sigs[v.f])
+	colnames(results) = c("term", "descrp","p", "q", "pvals", "padj", "sig" )
+
 	return (results)
 
 }
