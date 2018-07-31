@@ -130,7 +130,27 @@ png("my_plot.png") # or try # jpg()
 plot(my_data)
 dev.off() 
 ```
-
+## Functions 
+- User defined or from other packages 
+- The structure of a function: 
+```
+my_function <- function(arg1, arg2, ... ){
+  commands (or statements)
+  return(object)
+}
+```
+- objects in the function are local, so changing them within the function does not have a global effect (mostly, but beware!)
+- objects returned can be any data type
+- can look inside other functions to see how they work:
+```
+dist
+```
+- you can write your function for tasks that are usually repetitive or have some 'abstract' function
+```
+my_plot <- function(data){ 
+ plot(data, pch=19, col="blue", cex=2)
+}
+```
 
 ## Test yourself! 
 1. Create an R markdown file (using RStudio). Save the file as "yourname_Lesson3.Rmd". Once again, delete the instructions starting from "This is an [R...". For the remaining exercises, insert the code as R chunks when you are satisified with your solutions. An R chunk is code placed  after a line that starts with ` ```{ r } `and ends before a line with ` ``` `.  
