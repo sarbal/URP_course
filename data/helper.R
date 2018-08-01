@@ -229,12 +229,11 @@ gene_set_enrichment <- function(genes, genes.labels, voc){
 
 	test =  cbind( (genes.counts.set -1) , labels.counts, universe-labels.counts, labels.counts.set)
         pvals = phyper(test[,1], test[,2], test[,3], test[,4], lower.tail=F)
-        sigs = pvals < ( 0.05/length(pvals) )
         pvals.adj = p.adjust( pvals, method="BH")
 
-	results = cbind(voc[v.g,1:2], test[v.f,c(1,2)], pvals[v.f], pvals.adj[v.f], sigs[v.f])
-	colnames(results) = c("term", "descrp","p", "q", "pvals", "padj", "sig" )
-
+	results = cbind(voc[v.g,1:2], test[v.f,c(1)]+1, test[v.f,c(2)] , pvals[v.f], pvals.adj[v.f] )
+	colnames(results) = c("term", "descrp","p", "q", "pvals", "padj" )
+        results =  results[results[,3] > 0 ,]
 	return (results)
 
 }
