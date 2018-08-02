@@ -19,7 +19,7 @@ Let's start at the very begining [(a very good place to start)](/intro/intro.md)
 [Let's play with real data.](/lessons/lesson3.md)
 
 ## Lesson 4: Another potentially fun example.
-[Let's reproduce this paper.](/lessons/lesson4.md)
+[Let's reproduce some analyses.](/lessons/lesson4.md)
 
 ## Lesson 5: So shiny!
 [Let's make something interactive.](/lessons/lesson5.md)
