@@ -1,5 +1,5 @@
 # Lesson 4: Another potentially fun example.
-
+Let's do some analyses. 
 
 Download these files into your working directory: 
 - [lesson4](../data/lesson4.Rdata) 
@@ -20,10 +20,38 @@ source("helper.R")
 load("lesson4.Rdata")
 ```
 
+
+## The many ways of gene set enrichment 
+Follow this: 
+https://cran.r-project.org/web/packages/enrichR/vignettes/enrichR.html 
+
+```
+install.packages("enrichR")
+library(enrichR)
+dbs <- listEnrichrDbs()
+dbs <- c("GO_Molecular_Function_2015", "GO_Cellular_Component_2015", "GO_Biological_Process_2015")
+enriched <- enrichr(c("Runx1", "Gfi1", "Gfi1b", "Spi1", "Gata1", "Kdr"), dbs)
+```
+- Or, we can build a gene by function matrix and perform our own gene set enrichment  
+```
+library(EGAD)
+annot = make_annotations( (GO.mouse[,c(1,3)][GO.mouse[,4]!="IEA",] ), unique(GO.mouse[,1]), unique(GO.mouse[,3]) )    
+enriched2 <- gene_set_enrichment(c("Runx1", "Gfi1", "Gfi1b", "Spi1", "Gata1", "Kdr"), annot, voc)
+```
+- One worry that we might have is gene multifunctionality (genes having many functions). 
+- Multifunctional genes will return many functions in an enrichment assessment, and not very unique.   
+- We can assess our results and genes by calculating how multifunctional genes and gene sets/functions are using the EGAD package 
+```
+multifunc_assessment <- calculate_multifunc(annot)
+auc_mf <- auc_multifunc(annot, multifunc_assessment[,4])
+hist <- plot_distribution(auc_mf, xlab="AUROC", med=FALSE, avg=FALSE)
+```
+
+
 ## Replicating a figure
 Let's take a look at this paper:  https://genome.cshlp.org/content/22/4/602
-They've made their data available (the link in the paper is broken): http://giladlab.uchicago.edu/data/final.data.tgz  
-A relatively straightforward analysis is in their supplement: https://genome.cshlp.org/content/suppl/2012/01/03/gr.130468.111.DC1/SupplementalFigures_08_09_11.pdf 
+- They've made their data available (the link in the paper is broken): http://giladlab.uchicago.edu/data/final.data.tgz  
+- Let's try reproducing the heatmap (Supplementary figure 5).  https://genome.cshlp.org/content/suppl/2012/01/03/gr.130468.111.DC1/SupplementalFigures_08_09_11.pdf 
 
 1. Get data 
 
@@ -56,28 +84,6 @@ heatmap.3(samples.cor)
 samples.cor = cor(exprs.means[ ,-filt.species], m="s", use="p")
 heatmap.3(samples.cor)
 ``` 
-
-
-## The many ways of gene set enrichment 
-Follow this: 
-https://cran.r-project.org/web/packages/enrichR/vignettes/enrichR.html 
-
-```
-install.packages("enrichR")
-library(enrichR)
-dbs <- listEnrichrDbs()
-dbs <- c("GO_Molecular_Function_2015", "GO_Cellular_Component_2015", "GO_Biological_Process_2015")
-enriched <- enrichr(c("Runx1", "Gfi1", "Gfi1b", "Spi1", "Gata1", "Kdr"), dbs)
-```
-
-
-```
-library(EGAD)
-annot = make_annotations( (GO.mouse[,c(1,3)][GO.mouse[,4]!="IEA",] ), unique(GO.mouse[,1]), unique(GO.mouse[,3]) )    
-enriched2 <- gene_set_enrichment(c("Runx1", "Gfi1", "Gfi1b", "Spi1", "Gata1", "Kdr"), annot, voc)
-```
-
-
 
 
 
