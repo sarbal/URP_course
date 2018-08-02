@@ -17,6 +17,7 @@ setwd("H:/URP")
 Run this to install/load libraries
 ```
 source("helper.R") 
+load("lesson4.Rdata")
 ```
 
 ## Replicating a figure
