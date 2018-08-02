@@ -22,7 +22,12 @@ load("lesson4.Rdata")
 
 
 ## The many ways of gene set enrichment 
-Follow this: 
+### Gene set enrichment (GSE)
+A method to identify properties of genes or proteins that are over-represented. GSE is a (relatively) straightforward method to sumamrize the results of your experiment, in particualr when you believe there is some link or association to a known phenotype (e.g., enrichment for dopamine receptors in Parkinson's disease). Uses statistical approaches to identify significantly enriched groups of genes, and the main annotation database is the Gene Ontology ([GO](http://www.geneontology.org/)) and the Molecular Signatures database ([MSigDB](http://software.broadinstitute.org/gsea/msigdb/index.jsp)). 
+- The most well known method is GSEA: http://www.pnas.org/content/102/43/15545.short, but it can be a little complicated to run on other data (mostly for gene expression experiments) and interpret (old dispute here https://www.ncbi.nlm.nih.gov/pubmed/20048385). 
+- There have been many others, and the simplest is a hypergeometric test to measure overlap. 
+
+- One such method in R is enrichR: 
 https://cran.r-project.org/web/packages/enrichR/vignettes/enrichR.html 
 
 ```
@@ -32,21 +37,29 @@ dbs <- listEnrichrDbs()
 dbs <- c("GO_Molecular_Function_2015", "GO_Cellular_Component_2015", "GO_Biological_Process_2015")
 enriched <- enrichr(c("Runx1", "Gfi1", "Gfi1b", "Spi1", "Gata1", "Kdr"), dbs)
 ```
-- Or, we can build a gene by function matrix and perform our own gene set enrichment  
+- Or, we can build a gene by function matrix and perform our own gene set enrichment (function is in helper.R) 
 ```
 library(EGAD)
 annot = make_annotations( (GO.mouse[,c(1,3)][GO.mouse[,4]!="IEA",] ), unique(GO.mouse[,1]), unique(GO.mouse[,3]) )    
 enriched2 <- gene_set_enrichment(c("Runx1", "Gfi1", "Gfi1b", "Spi1", "Gata1", "Kdr"), annot, voc)
 ```
-- One worry that we might have is gene multifunctionality (genes having many functions). 
-- Multifunctional genes will return many functions in an enrichment assessment, and not very unique.   
+- How do the results compare?
+
+### Multifunctionality 
+- One worry we might have with GSE is gene multifunctionality (genes having many functions). (Disclaimer this is what the Gillis lab works on!).  
+- Multifunctional genes will return many functions in an enrichment assessment (not very useful!).   
 - We can assess our results and genes by calculating how multifunctional genes and gene sets/functions are using the EGAD package 
 ```
 multifunc_assessment <- calculate_multifunc(annot)
+plot(multifunc_assessment[,4])
 auc_mf <- auc_multifunc(annot, multifunc_assessment[,4])
 hist <- plot_distribution(auc_mf, xlab="AUROC", med=FALSE, avg=FALSE)
 ```
-
+- How multifunctional are our results? 
+```
+m = match( enriched2[,1], names(auc_mf))
+hist <- plot_distribution(auc_mf[m], xlab="AUROC", med=FALSE, avg=FALSE)
+```
 
 ## Replicating a figure
 Let's take a look at this paper:  https://genome.cshlp.org/content/22/4/602
