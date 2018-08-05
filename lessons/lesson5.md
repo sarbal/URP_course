@@ -36,7 +36,7 @@ ui <- fluidPage(
       sliderInput("bins", "Number of bins:",  min = 1, max = 10, value = 5) 
     ),
     
-    # Show result
+    # Result display
     mainPanel(
       textOutput("sum"),
       plotOutput("distPlot"),
@@ -50,33 +50,38 @@ ui <- fluidPage(
 - The server function, where all the action happens
 ```
 server <- function(input,output,session) {
+  # Reactive input 
   observeEvent( input$add,{
     x <- as.numeric(input$one)
     y <- as.numeric(input$two)
     title <- as.character(input$caption)
     
-    #reactive expression
+    # Reactive expressions
     n <- x+y
     d <- round(abs(rnorm(n)  ) * n )
     m <- mean(d)
+    sdd <- sd(d)
+    bins <- seq(min(d), max(d), length.out = input$bins + 1)
+      
+    # Reactive output
     output$test <- renderPrint("Done!")
     output$distPlot <- renderPlot({
       
-      bins <- seq(min(d), max(d), length.out = input$bins + 1)
-      # draw the histogram with the specified number of bins
-      hist(d, breaks = bins, col = 'darkgray', border = 'white', main=title)
-      abline(v=m, lty=2, lwd=3, col=4)
-      if (input$obs) {
-        rug( d  )
-      }
+      # Draw the histogram with the specified number of bins
+      hist(d, breaks = bins, freq=F, col = 'darkgray', border = 'white', main=title)
+      ld <- density(d)
+      lines(ld, col=4) 
+      abline(v=m, lty=2, lwd=3, col=4)      
+      if (input$obs) { rug(d) }
       
-      })
+    })
     output$table <- renderTable({
-      data = cbind(n,m)
+      data = cbind(n,m, sdd)
       return( data ) 
     })
-
- )
+    
+  })
+)
 ```
 ### Run!
 ```
