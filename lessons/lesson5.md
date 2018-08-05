@@ -18,7 +18,7 @@ Let's make something interactive! Start off by downloading this file:
 3. Reactive Expressions
 - expressions that take in the reactive input and convert it to a reactive output 
 
-### Two main functions
+### Two main functions: ```ui``` and ```server```
 - User interface function (```ui```) defines the structure of the page 
 - Placing a function in ui tells shiny where to display your object
 - Add an R object to your user interface, the object will be reactive if the code that builds it calls a widget value
