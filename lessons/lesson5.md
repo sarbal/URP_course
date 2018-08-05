@@ -1,5 +1,9 @@
 # Lesson 5: So shiny!
-Let's make something interactive! Start off by downloading this file:
+Let's make something interactive! Start off by installing the shiny package: 
+```
+install.packages("shiny")
+```
+And then downloading this file:
 - [lesson5](../data/lesson5.Rdata") 
 
 ## What's Shiny, precious, eh?
