@@ -108,7 +108,9 @@ hist(iris$Petal.Width[iris$Species=="virginica"],  breaks=h$breaks,col=makeTrans
 ```
 - How about some density lines? 
 ```
-lines()
+h <- hist(iris$Petal.Width, freq=F)
+d_all <-density( iris$Petal.Width) 
+lines(d_all, col="black")
 ```
 - We can keep adding layers to our plots with other functions:
 ```
