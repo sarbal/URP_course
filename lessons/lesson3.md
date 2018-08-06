@@ -27,7 +27,7 @@ source("helper.R")
 - From a comma or tab separated file:
 ```
 dataA <- read.csv(file="my_dataA.csv")
-dataB <- read.table(file="my_dataB.tab", header=TRUE, sep="\t")
+dataB <- read.table(file="my_dataB.tab", header=TRUE)
 datasaurus <- read.delim(file="DatasaurusDozen.txt", sep=":")
 ```
 - With more control: 
