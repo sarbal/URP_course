@@ -101,9 +101,9 @@ hist(iris$Petal.Width[iris$Species=="virginica"],  breaks=h$breaks,col="purple",
 - There is still some overlap, so we can play with the opacity of the colors, and force no color for the first histogram
 ```
 h <- hist(iris$Petal.Width, col=0, border=0)
-hist(iris$Petal.Width[iris$Species=="setosa"],  breaks=h$breaks,col=make_transparent("red"), add=T)
-hist(iris$Petal.Width[iris$Species=="versicolor"], breaks=h$breaks, col=make_transparent("blue"), add=T)
-hist(iris$Petal.Width[iris$Species=="virginica"],  breaks=h$breaks,col=make_transparent("purple"), add=T)
+hist(iris$Petal.Width[iris$Species=="setosa"],  breaks=h$breaks,col=makeTransparent("red"), add=T)
+hist(iris$Petal.Width[iris$Species=="versicolor"], breaks=h$breaks, col=makeTransparent("blue"), add=T)
+hist(iris$Petal.Width[iris$Species=="virginica"],  breaks=h$breaks,col=makeTransparent("purple"), add=T)
 
 ```
 - How about some density lines? 
@@ -175,6 +175,7 @@ heatmap.3(samples.cor, col=plasma(100), ColSideCol=cols7[as.numeric(iris$Species
 We can do most all of this with [ggplot2](https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf).There are less things finicky things to worry about, and is generally more intuitive. 
 ```
 g <- ggplot(iris, aes(x = Sepal.Length, y = Petal.Length)) 
+g
 ```
 - This does nothing, because we've not specified what we want to draw:
 ```
