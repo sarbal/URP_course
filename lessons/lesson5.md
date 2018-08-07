@@ -4,7 +4,7 @@ Let's make something interactive! Start off by installing the shiny package:
 install.packages("shiny")
 ```
 And then downloading this file:
-- [lesson5](../data/lesson5.Rdata") 
+- [lesson5](../data/lesson5.Rdata) 
 
 ## What's Shiny, precious, eh?
 - Shiny is an R package that makes it easy to build interactive web apps.
